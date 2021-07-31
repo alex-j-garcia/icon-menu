@@ -1,9 +1,15 @@
+/********************
+|| General Styles
+*********************/
 html {
   /* Display & Box Model */
   box-sizing: border-box;
 
   /* Other */
   font-size: 62.5%;
+
+  /* CSS Varialbes */
+  --text: hsla(0, 5%, 10%, 0.9);
 }
 
 *,
@@ -13,4 +19,45 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+.body {
+  height: 100vh;
+}
+
+.menu {
+  /* Display & Box Model */
+  width: 342px;
+  margin: 40vh auto;
+
+  /* Other */
+  font-size: 2rem;
+}
+
+.menuBar {
+  display: inline-block;
+}
+
+.menuBar li {
+  /* Display & Box Model */
+  display: inline-block;
+  border: 1px solid black;
+
+  /* Other */
+  color: var(--text);
+}
+
+.menuBar span {
+  display: block;
+}
+
+/********************
+|| Utilities
+*********************/
+.noBullets {
+  list-style-type: none;
+}
+
+.troubleshooting {
+  border: 1px solid red;
 }
