@@ -46,26 +46,49 @@ html {
 
 .menuBar li {
   /* Display & Box Model */
+  position: relative;
   border: 1px solid var(--button-borders);
 
   /* Other */
   background: var(--button-background);
   color: var(--text);
   text-align: center;
+  overflow: hidden;
 }
 
 .menuBar i {
-  padding: 2rem;
+  /* outline: 1px solid red; */
+  display: block;
+  margin: 1.8rem 0;
 }
 
 span {
-  margin-top: .5rem;
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  right: 10px;
+  left: 10px;
   font-weight: 700;
   font-size: 1.2rem;
   opacity: 0;
-  display: none;
 
-  transition: opacity 2000ms linear;
+  /* THIS IS GREAT!!!!!!!!!!!!!!!! */
+  pointer-events: none;
+
+  transition: opacity 100ms ease,
+              right 80ms ease,
+              left 80ms ease,
+              bottom 80ms ease;
+}
+
+li:first-child span {
+  left: 0;
+  right: 1rem;
+}
+
+li:last-child span {
+  right: -1rem;
+  bottom: -1rem;
 }
 
 /********************
@@ -76,20 +99,25 @@ span {
 }
 
 .menuBar li:hover span {
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
   opacity: 1.0;
-  display: block;
+}
+
+li:last-child:hover span {
+  right: 0;
+  bottom: 0.2rem;
 }
 
 .menuBar li:hover i {
-  padding-top: 1rem;
-  padding-bottom: 0;
+  margin-top: 1.5rem;
+  margin-bottom: .2rem;
 }
 
 .menuBar li:hover {
   background: var(--button-background-hover);
 }
-
-/* use an approach of padding-top (look at your codepen) */
 
 /********************
 || Utilities
