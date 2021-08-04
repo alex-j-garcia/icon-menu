@@ -40,12 +40,12 @@ html {
 }
 
 .menuBar ul {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
 }
 
 .menuBar li {
   /* Display & Box Model */
+  flex: 1;
   position: relative;
   border: 1px solid var(--button-borders);
 
@@ -96,6 +96,7 @@ li:last-child span {
 *********************/
 .menuBar li:hover {
   color: hsla(0, 0%, 0%, 1.0);
+  flex: 1.25;
 }
 
 .menuBar li:hover span {
