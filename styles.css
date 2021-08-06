@@ -11,7 +11,8 @@ html {
 
   /* CSS Varialbes */
   --text: hsla(0, 5%, 25%, 0.7);
-  --button-borders: hsla(0, 1%, 20%, 0.6);
+  --black: hsla(0, 0%, 8%, 0.8);
+  --button-borders: hsla(0, 1%, 62%, 0.6);
   --button-background: hsla(0, 0%, 97%, 1.0);
   --button-background-hover: hsla(0, 0%, 100%, 1.0);
 }
@@ -28,53 +29,65 @@ html {
 .menu {
   /* Display & Box Model */
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .menuBar {
-  width: 375px;
+  /* Display & Box Model */
+  width: 325px;
+
   /* Other */
   font-size: 1.5rem;
 }
 
 .menuBar ul {
+  /* Display & Box Model */
   display: flex;
 }
 
 .menuBar li {
+  /* Positioning */
+  position: relative;
+
   /* Display & Box Model */
   flex: 1;
-  position: relative;
   border: 1px solid var(--button-borders);
+  overflow: hidden;
 
   /* Other */
   background: var(--button-background);
   color: var(--text);
   text-align: center;
-  overflow: hidden;
+
+  /* Animations */
+  transition: flex 100ms ease;
 }
 
 .menuBar i {
-  /* outline: 1px solid red; */
+  /* Display & Box Model */
   display: block;
   margin: 1.8rem 0;
 }
 
 span {
-  display: block;
+  /* Positioning */
   position: absolute;
   bottom: -1rem;
   right: 10px;
   left: 10px;
-  font-weight: 700;
-  font-size: 1.2rem;
+
+  /* Display & Box Model */
+  display: block;
   opacity: 0;
 
-  /* THIS IS GREAT!!!!!!!!!!!!!!!! */
+  /* Other */
+  font-weight: 700;
+  font-size: 1.2rem;
   pointer-events: none;
 
+  /* Animations */
   transition: opacity 100ms ease,
               right 80ms ease,
               left 80ms ease,
@@ -82,11 +95,13 @@ span {
 }
 
 li:first-child span {
+  /* Positioning */
   left: 0;
   right: 1rem;
 }
 
 li:last-child span {
+  /* Positioning */
   right: -1rem;
   bottom: -1rem;
 }
@@ -95,28 +110,37 @@ li:last-child span {
 || Hover Styles
 *********************/
 .menuBar li:hover {
-  color: hsla(0, 0%, 0%, 1.0);
+  /* Display & Box Model */
   flex: 1.25;
+
+  /* Other */
+  color: var(--black);
 }
 
 .menuBar li:hover span {
+  /* Positioning */
   left: 0;
   right: 0;
   bottom: 0.2rem;
+
+  /* Display & Box Model */
   opacity: 1.0;
 }
 
 li:last-child:hover span {
+  /* Positioning */
   right: 0;
   bottom: 0.2rem;
 }
 
 .menuBar li:hover i {
+  /* Display & Box Model */
   margin-top: 1.5rem;
   margin-bottom: .2rem;
 }
 
 .menuBar li:hover {
+  /* Other */
   background: var(--button-background-hover);
 }
 
